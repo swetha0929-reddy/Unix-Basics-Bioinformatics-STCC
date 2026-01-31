@@ -1,0 +1,65 @@
+FASTA FILE ANALYSIS RESULTS
+==========================
+
+Dataset: tb1.fasta
+------------------
+Description: DNA sequence (tb1 gene)
+
+Number of sequences:
+Command used:
+  grep ">" tb1.fasta | wc -l
+
+Result:
+  1
+
+Total nucleotide count (excluding headers):
+Command used:
+  grep -v ">" tb1.fasta | wc -c
+
+Result:
+  1414
+
+
+Dataset: tb1-protein.fasta
+--------------------------
+Description: Protein sequence (TB1 protein)
+
+Number of sequences:
+Command used:
+  grep ">" tb1-protein.fasta | wc -l
+
+Result:
+  1
+
+File size:
+Command used:
+  ls -lh tb1-protein.fasta
+
+Result:
+  ~244 bytes
+
+
+Dataset: tga1-protein.fasta
+---------------------------
+Description: Protein sequence (TGA1 protein)
+
+Number of sequences:
+Command used:
+  grep ">" tga1-protein.fasta | wc -l
+
+Result:
+  1
+
+File size:
+Command used:
+  ls -lh tga1-protein.fasta
+
+Result:
+  ~244 bytes
+
+
+Notes:
+------
+- All FASTA files contain a single sequence.
+- Unix command-line tools were used to quickly inspect sequence structure and size.
+- These checks are commonly performed before downstream bioinformatics analyses.
