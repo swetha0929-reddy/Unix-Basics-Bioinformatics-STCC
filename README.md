@@ -66,6 +66,7 @@ Basic Unix commands were used to move around the file system and view files.
 
 
 Commands practiced:
+
 ```bash
 pwd
 ls
