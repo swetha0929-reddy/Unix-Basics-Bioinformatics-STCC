@@ -72,6 +72,7 @@ pwd
 ls
 cd
 
+```
 Why this matters in bioinformatics:
 Biological data is stored in many folders (raw data, results, scripts).
 Knowing where you are and how to move between directories is essential.
@@ -80,12 +81,14 @@ Creating and Managing Files
 
 Commands used:
 
+```bash
 mkdir
 touch
 cp
 mv
 rm
 
+```
 Example:
 
 echo "Hello Unix" > example.txt
@@ -98,10 +101,12 @@ These commands are used to manage datasets, scripts, logs, and result files in r
 Searching and Counting Text
 
 Commands practiced:
-
+ 
+```bash
 wc
 grep
 
+```
 Examples:
 
 wc -l file.txt
@@ -134,10 +139,13 @@ Sequence lines follow the header
 
 Commands used:
 
+```bash
+
 grep ">" sample.fasta
 grep ">" sample.fasta | wc -l
 grep -v ">" sample.fasta | wc -c
 
+```
 These commands were used to:
 
 Count sequences
@@ -156,11 +164,14 @@ tga1-protein.fasta – Protein sequence
 
 Commands used:
 
+```bash
+
 head tb1.fasta
 grep ">" tb1.fasta | wc -l
 grep -v ">" tb1.fasta | wc -c
 ls -lh tb1.fasta tb1-protein.fasta tga1-protein.fasta
 
+```
 Purpose of these checks:
 
 Confirm number of sequences
