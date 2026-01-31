@@ -1,7 +1,7 @@
 # STCC – Unix Basics for Bioinformatics
 
 
-Course Documentation and Hands-on Practice  
+## Course Documentation and Hands-on Practice  
 **Student:** Thamanna Swetha Reddy  
 **Institution:** Bversity School of Bioscience  
 
@@ -12,18 +12,17 @@ Course Documentation and Hands-on Practice
 ## Overview
 
 
-This repository documents Unix command-line concepts and tools learned during the **Short-Term Course on Unix (STCC)**, with a strong focus on **bioinformatics and genomic data analysis workflows**.
+Unix is an essential skill for bioinformatics and computational biology.  
+This repository documents the Unix command-line concepts learned during the **Short-Term Course on Unix (STCC)** and shows how these commands are applied to **biological data analysis**, especially FASTA files.
 
 
-The project demonstrates how Unix utilities are used for:
-- File system navigation
-- Streaming and inspecting large biological files
-- Text processing and pattern matching
-- Working with FASTA files
-- Version control using Git and GitHub
+The purpose of this repository is to clearly explain:
+- What commands were used
+- Why they were used
+- How they are useful in bioinformatics workflows
 
 
-This README is written as a **clear, reusable guide**, not just a list of commands, following good bioinformatics documentation practices.
+This README is written as **learning documentation**, not just a list of commands.
 
 
 ---
@@ -35,23 +34,23 @@ This README is written as a **clear, reusable guide**, not just a list of comman
 By completing this mini project, I demonstrate the ability to:
 
 
-- Navigate Unix/Linux file systems confidently
-- Create, modify, and manage files and directories
-- Use Unix utilities to inspect and analyze biological data
-- Work with FASTA sequence files
-- Use Git and GitHub for version control and reproducible research
+- Navigate the Unix/Linux file system
+- Create, move, copy, and delete files and folders
+- Use Unix commands to inspect biological data
+- Understand and analyze FASTA sequence files
+- Use Git and GitHub to manage and document work
 
 
 ---
 
 
-## Tools & Environment
+## Tools and Environment
 
 
-- Operating System: Ubuntu (WSL)
-- Shell: Bash
-- Text Editor: nano
-- Version Control: Git & GitHub
+- **Operating System:** Ubuntu (WSL)
+- **Shell:** Bash
+- **Text Editor:** nano
+- **Version Control:** Git and GitHub
 
 
 ---
@@ -60,85 +59,176 @@ By completing this mini project, I demonstrate the ability to:
 ## Unix Basics Practice
 
 
-Basic Unix commands were practiced to understand file system navigation and file handling.
+### File System Navigation
 
 
-Commands practiced include:
+Basic Unix commands were used to move around the file system and view files.
 
 
-- `pwd`, `ls` – check current directory and list files
-- `mkdir`, `cd` – create and move between directories
-- `echo`, `cat` – create and view text files
-- `wc` – count lines, words, and characters
-- `grep` – search for patterns in files
-- `cp`, `mv`, `rm` – copy, move, and delete files
+Commands practiced:
+```bash
+pwd
+ls
+cd
 
+Why this matters in bioinformatics:
+Biological data is stored in many folders (raw data, results, scripts).
+Knowing where you are and how to move between directories is essential.
 
-A simple text file was created and modified to practice searching and counting text using Unix utilities.
-
-
----
-
-
-## FASTA File Practice
-
-
-FASTA is a standard file format in bioinformatics used to store nucleotide or protein sequences.
-
-
-### Sample FASTA File
-
-
-A small FASTA file (`sample.fasta`) was manually created to understand FASTA structure.
-
-
-FASTA format basics:
-- Each sequence starts with a header line beginning with `>`
-- Sequence data follows the header
-
+Creating and Managing Files
 
 Commands used:
-```bash
+
+mkdir
+touch
+cp
+mv
+rm
+
+Example:
+
+echo "Hello Unix" > example.txt
+echo "Bioinformatics practice" >> example.txt
+cat example.txt
+
+Why this matters:
+These commands are used to manage datasets, scripts, logs, and result files in real projects.
+
+Searching and Counting Text
+
+Commands practiced:
+
+wc
+grep
+
+Examples:
+
+wc -l file.txt
+grep "gene" file.txt
+
+Why this matters:
+These commands help count sequences, genes, reads, or search for specific patterns in biological files.
+
+FASTA File Practice
+
+FASTA is a common file format used to store DNA and protein sequences.
+
+Before doing any analysis, FASTA files must be checked for:
+
+Number of sequences
+
+Sequence length
+
+File size
+
+Sample FASTA File
+
+A small FASTA file (sample.fasta) was created manually to understand the format.
+
+FASTA structure:
+
+Each sequence starts with >
+
+Sequence lines follow the header
+
+Commands used:
+
 grep ">" sample.fasta
 grep ">" sample.fasta | wc -l
 grep -v ">" sample.fasta | wc -c
-Real Biological FASTA Data
+
+These commands were used to:
+
+Count sequences
+
+Count total nucleotides
+
+Real Biological FASTA Files
 
 Real biological FASTA files were analyzed:
 
-tb1.fasta (DNA)
+tb1.fasta – DNA sequence
 
-tb1-protein.fasta (Protein)
+tb1-protein.fasta – Protein sequence
 
-tga1-protein.fasta (Protein)
+tga1-protein.fasta – Protein sequence
 
-Analyses performed:
+Commands used:
 
-Viewing FASTA headers using head
+head tb1.fasta
+grep ">" tb1.fasta | wc -l
+grep -v ">" tb1.fasta | wc -c
+ls -lh tb1.fasta tb1-protein.fasta tga1-protein.fasta
 
-Counting number of sequences using grep and wc
+Purpose of these checks:
 
-Estimating total nucleotide or amino acid count
+Confirm number of sequences
 
-Comparing file sizes using ls -lh
+Estimate sequence length
 
-These checks are commonly performed before downstream bioinformatics analyses.
+Compare file sizes
+
+Verify files before downstream analysis
+
+These steps are standard in bioinformatics workflows.
 
 FASTA Analysis Results
 
-The results of FASTA file analysis are documented in:
+The results of FASTA analysis are saved separately in:
 
 results/fasta_analysis_results.txt
 
-This file records:
+This file contains:
 
-Number of sequences per FASTA file
+Sequence counts
 
-Total nucleotide or amino acid counts
+Nucleotide or amino acid counts
 
-File sizes and basic observations
+File size information
+
+Keeping results separate from commands improves clarity and reproducibility.
+
+Version Control with Git and GitHub
+
+Git was used to track changes and upload the project to GitHub.
+
+Basic workflow:
+
+git init
+git add .
+git commit -m "Commit message"
+git push
+
+Why Git is important in bioinformatics:
+
+Tracks changes
+
+Prevents data loss
+
+Helps collaboration
+
+Supports reproducible research
 
 Conclusion
 
-This mini project strengthened practical Unix skills essential for bioinformatics.
-It demonstrates how simple Unix commands can efficiently analyze biological sequence data and form the foundation of larger bioinformatics workflows.
+This mini project helped build strong foundational skills in Unix that are essential for bioinformatics.
+
+It demonstrates how simple Unix commands can be used to:
+
+Navigate datasets
+
+Inspect biological sequence files
+
+Prepare data for larger analysis pipelines
+
+These skills form the base for advanced work in genomics and computational biology.
+
+Repository Information
+
+Course: Short-Term Course on Unix (STCC)
+
+Institution: Bversity School of Bioscience
+
+Student: Thamanna Swetha Reddy
+
+Purpose: Educational documentation of Unix basics for bioinformatics
